@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (function () {
+        var url = new URL(location.href);
+        var path = url.pathname;
+        if (!path.endsWith("/") && !/\.[^/]+$/.test(path)) url.pathname = path + "/";
+        url.hash = "";
+        var base = document.createElement("base");
+        base.setAttribute("href", url.href);
+        document.head.appendChild(base);
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CPM 주공정법</title>
+    <meta
+      name="description"
+      content="공정표를 처음 배우는 학생을 위한 CPM(주공정법) 학습. ES, EF부터 주공정까지."
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+    <link rel="stylesheet" href="styles.css?v=58" />
+  </head>
+  <body>
+    <div class="grid-bg" aria-hidden="true"></div>
+    <header class="site-header">
+      <div class="brand-row">
+        <button type="button" class="back-btn" id="nav-back" hidden>← 뒤로</button>
+        <a class="logo" href="#/" data-link>
+          <span class="logo-mark" aria-hidden="true"><img src="mascots/b02.png" alt="" /></span>
+          <span class="logo-text">CPM 주공정법</span>
+        </a>
+      </div>
+      <div class="header-tools">
+        <nav class="nav" aria-label="주요 메뉴">
+          <a href="#/" data-nav="home" data-link><span class="mark mark-home" aria-hidden="true"></span>홈</a>
+          <a href="#/cpm/learn/schedule" data-nav="learn" data-link><span class="mark mark-learn" aria-hidden="true"></span>기초</a>
+          <a href="#/gantt" data-nav="gantt" data-link><span class="mark mark-gantt" aria-hidden="true"></span>간트차트</a>
+          <a href="#/cpm" data-nav="practice" data-link><span class="mark mark-practice" aria-hidden="true"></span>실습</a>
+          <a href="#/solve" data-nav="solve" data-link><span class="mark mark-solve" aria-hidden="true"></span>문제풀이</a>
+        </nav>
+        <div class="account" id="account"></div>
+      </div>
+    </header>
+
+    <main id="app"></main>
+
+    <footer class="site-footer">
+      <p>CPM 주공정법 · 처음 배우는 학생을 위한 공정표 학습</p>
+    </footer>
+    <div class="mascots" aria-hidden="true">
+      <img class="b01" src="mascots/b01.png" alt="" />
+      <img class="b02" src="mascots/b02.png" alt="" />
+      <img class="b03" src="mascots/b03.png" alt="" />
+      <img class="b04" src="mascots/b04.png" alt="" />
+      <img class="b05" src="mascots/b05.png" alt="" />
+      <img class="b06" src="mascots/b06.png" alt="" />
+      <img class="b07" src="mascots/b07.png" alt="" />
+    </div>
+
+    <script src="cpm.js?v=41"></script>
+    <script src="app.js?v=71"></script>
+  </body>
+</html>
